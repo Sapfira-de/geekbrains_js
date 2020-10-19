@@ -28,6 +28,76 @@ function viewCart() {
   cart.render();
 };
 
+// Класс корзины
+class Cart {
+  constructor() {
+      this.cartProducts = [];
+  }
+
+ // Добавление в корзину 
+ addToCart(id) {
+  let toCart;
+  list.products.forEach(function(product) {
+      if(id == product.id) {
+          toCart = {
+              id: product.id,
+              title: product.title,
+              price: product.price,
+              img: product.img
+          }
+      }
+  });
+  this.cartProducts.push(toCart);
+  this.cartCount();
+}
+
+// Удаление товара из корзины 
+deleteFromCart(id) {
+  let getIdElement;
+  this.cartProducts.forEach(function(product, i) {
+      let thisId = product.id;
+      if(id == thisId) {
+          getIdElement = i;
+      }
+      
+  });
+  this.cartProducts.splice(getIdElement, 1);
+  this.render();
+  this.cartCount();
+}
+
+// Стоимость товаров в корзине... все равно выводит 0
+calcAllProducts() {
+  let totalPrice = 0;
+  this.cartProducts.forEach((product) => {
+      if (product.price !== undefined) {
+          totalPrice += product.price;
+      }
+  });
+  let totalProductsAnswer = "Сумма товаров в корзине: $" + totalPrice;
+  document.querySelector('.products').innerHTML = totalProductsAnswer;
+}
+
+// Считаем количество товаров
+cartCount() {
+  let count = this.cartProducts.length;
+  document.getElementById('cart').innerHTML = ' (' + count + ')';
+}
+
+// Рендер содержимого корзины
+render() {
+  let readHtml = '';
+  this.cartProducts.forEach((product) => {
+      const productItem = new CartItem(product.id, product.title, product.price, product.img);
+      readHtml += productItem.render();
+  })
+  document.querySelector('.products').innerHTML = readHtml;
+  this.calcAllProducts();
+}
+}
+
+
+
 
 class ProductList {
   #goods;
