@@ -15,6 +15,19 @@ function getRequest(url, cb) {
 
 
 // –--------------------------------
+// функция для вызова добавления в корзину
+function addCart(id) {
+  cart.addToCart(id);
+};
+// функция для вызова удаления из корзины
+function deleteProduct(id) {
+  cart.deleteFromCart(id);
+};
+// функция для вызова рендера корзины
+function viewCart() {
+  cart.render();
+};
+
 
 class ProductList {
   #goods;
