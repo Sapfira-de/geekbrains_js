@@ -66,7 +66,7 @@ deleteFromCart(id) {
   this.cartCount();
 }
 
-// Стоимость товаров в корзине... все равно выводит 0
+// Стоимость товаров в корзине... =(
 calcAllProducts() {
   let totalPrice = 0;
   this.cartProducts.forEach((product) => {
@@ -84,7 +84,7 @@ cartCount() {
   document.getElementById('cart').innerHTML = ' (' + count + ')';
 }
 
-// Рендер содержимого корзины
+// Рендер содержимого корзины. Не могу понять, то ли верно делаю, то ли нет.
 render() {
   let readHtml = '';
   this.cartProducts.forEach((product) => {
