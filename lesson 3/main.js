@@ -107,7 +107,7 @@ class ProductList {
     this.#goods = [];
     this._allProducts = [];
 
-    // this._fetchGoods();
+    /*// this._fetchGoods();
     this.#getProducts().then((data) => {
       this.#goods = [...data];
       // this.#goods = Array.from(data);
@@ -115,7 +115,23 @@ class ProductList {
     });
 
     console.log(this.sum());
-  }
+  } */
+    
+       fetchGoods(url) {
+        makeGETRequest(url, (product) => {
+            this.goods = JSON.parse(product);
+            this.render();
+            this.calcAllGoods();
+        })
+    }
+    render() {
+        let listHtml = '';
+        this.goods.forEach((product) => {
+            const goodItem = new GoodItem(product.id, product.title, product.price, product.img);
+            listHtml += goodItem.render();
+        })
+        document.querySelector('.products').innerHTML = listHtml;
+    }
 
   // _fetchGoods() {
   //   getRequest(`${API}/catalogData.json`, (data) => {
