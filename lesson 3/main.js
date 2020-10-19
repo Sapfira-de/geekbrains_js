@@ -172,3 +172,4 @@ class ProductItem {
 }
 
 const list = new ProductList();
+const cart = new Cart();
