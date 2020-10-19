@@ -116,7 +116,7 @@ class ProductList {
 
     console.log(this.sum());
   } */
-    
+    // 
        fetchGoods(url) {
         makeGETRequest(url, (product) => {
             this.goods = JSON.parse(product);
