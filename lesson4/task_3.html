@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма Обратной Связи</title>
+    <link rel="stylesheet" href="task_3.css">
+    </head>
+    <body>
+        <div class="form">
+            <label id="name">
+                <input type="text" name="name" placeholder="Введите Ваше имя">
+                <small class="error">Имя должно содержать только буквы</small>
+            </label>
+            <label id="phone">
+                <input type="tel" name="phone" placeholder="+7(000)000-00-00">
+                <small class="error">Номер телефона должен быть в формате +7(000)000-00-00</small>
+            </label>
+            <label id="email">
+                <input type="email" name="email" placeholder="E-mail">
+                <small class="error">E-mail должен быть в формате mymail@mail.ru, или my.mail@mail.ru, или my-mail@mail.ru</small>
+            </label>
+            <label id="message">
+                <textarea placeholder="Ваше сообщение" name="message"></textarea>
+                <small class="error">Введите Ваше сообщение</small>
+            </label>
+            <button class="button">Отправить</button>
+        </div>
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+<script src="js/task_3.js"></script>
+</body>
+</html>
