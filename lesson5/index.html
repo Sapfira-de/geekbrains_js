@@ -12,12 +12,12 @@
         <div class="logo">Интернет-магазин</div>
         <div class="cart">
             <form action="#" class="search-form">
-                <input type="text" class="search-field">
+                <input type="text" class="search-field" v-on:keydown.enter="filterGoods()" v-model="searchLine" placeholder="Поиск товаров">
                 <button class="btn-search" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
-            <button class="btn-cart" type="button">Корзина</button>
+            <button class="btn-cart" type="button" v-bind:class="{ activebutton: isVisibleCart }" v-on:click="viewCart()">Корзина</button>
         </div>
     </header>
     <main>
