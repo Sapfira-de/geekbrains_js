@@ -19,6 +19,23 @@ const app = new Vue({
             console.log(product.id_product)
         },
     },
+    
+    viewCart() {
+                switch(this.isVisibleCart) {
+                    case(false): {
+                        this.isVisibleCart = true;
+                        break;
+                    }
+                    case(true): {
+                        this.isVisibleCart = false;
+                        break;
+                    }
+                }
+            },
+     filterGoods() {
+        let regexp = new RegExp(this.searchLine, 'i');
+        this.filterGoods = this.goods.filter(good => regexp.test(good.title));
+    }
     beforeCreate() {
         console.log('beforeCreate');
     },
