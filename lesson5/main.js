@@ -19,7 +19,7 @@ const app = new Vue({
             console.log(product.id_product)
         },
     },
-    
+    // чет не показывает
     viewCart() {
                 switch(this.isVisibleCart) {
                     case(false): {
