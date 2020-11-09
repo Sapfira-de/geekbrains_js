@@ -14,6 +14,13 @@ const app = new Vue({
                 })
         },
     },
+      deleteJson(url){
+            return fetch(url)
+            .then(result => result.json())
+            .catch(error => {
+                this.$refs.error.setError(error);
+            })
+    },
     mounted() {
         console.log(this);
     }
